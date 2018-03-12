@@ -23,13 +23,13 @@ const fetchMovies = () => {
   return async (dispatch) => {
     dispatch(fetchMoviesInProgress);
     try {
-      const movies = await axios.get('/api/movies/now-showing')
+      const movies = await axios.get('http://localhost:9090/movies/now-showing')
       // const movies = [{
       //   id: 'asfasdfas',
       //   name: 'Kabali',
       //   experience: 'asfasdfag',
       // }]
-      const moviesData = movies.map(movie => {
+      const moviesData = movies.data.map(movie => {
         const sluggedData = slug(changeCase.sentenceCase(movie.name), { lower: true });
         return {...movie, slug: sluggedData}
       });  
