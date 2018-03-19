@@ -3,8 +3,8 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 60px;
 }
 
 .App-header {
@@ -14,12 +14,26 @@
   color: white;
 }
 
+.App-header-text {
+  height: 100px;
+  padding-left: 150px;
+}
+
 .App-title {
   font-size: 1.5em;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.btn{
+  border: 1px solid grey;
+  margin-bottom: 5px;
+}
+
+.active, .btn:hover {
+  background-color: red;
 }
 
 @keyframes App-logo-spin {

@@ -1,13 +1,20 @@
+@import "app/App.css";
 body {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   font-family: sans-serif;
 }
 
-button{
-  border: 2px solid black;
+.movie-text{
+  text-align: center;
+  font-size: 0.8em;
 }
 
-.active, .btn:hover {
-  background-color: red;
+.img-div{
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
 }
+
+
+
