@@ -4,12 +4,12 @@ import fetchMovies, { NOW_SHOWING, UPCOMING_RELEASE } from '../movies/actions';
 
 const Header = (props) => {
   return (
-    <div class="header">
-      <div class="App-logo">
+    <div className="header">
+      <div className="App-logo">
         <img src="spicinemas.png" alt="Unable to load..."></img>
       </div>
-      <div class="App-header-text"><h1>Just Cinemas</h1></div>
-      <div class="btn-group movie-group">
+      <div className="App-header-text"><h1>Just Cinemas</h1></div>
+      <div className="btn-group movie-group">
         <button type="button" className={props.listingType === NOW_SHOWING ? 'btn active' : 'btn'} 
           onClick={()=>props.changeListingType(NOW_SHOWING)}>NOW RUNNING</button>
         <button type="button" className={props.listingType === UPCOMING_RELEASE ? 'btn active' : 'btn'} 
