@@ -8,7 +8,7 @@ class MovieGrid extends Component {
 
   componentDidMount() {
     console.log(this.props);
-    this.props.fetchMovies()
+    this.props.fetchMovies(this.props.listingType)
   }
 
   render() {
@@ -56,8 +56,9 @@ MovieGrid.propTypes = {
 
 export default connect(
   (state) => ({
-    movies: state.movies
+    movies: state.movies,
+    listingType: state.header.listingType
   }), 
   (dispatch) => ({
-    fetchMovies: () => dispatch(fetchMovies())
+    fetchMovies: (listingType) => dispatch(fetchMovies(listingType))
   }))(MovieGrid);

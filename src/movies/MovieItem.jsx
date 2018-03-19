@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const MovieItem = ({ name, slug }) => {
   const imageUrl = `https://img.spicinemas.in/resources/images/movies/${slug}/150x207.jpg`;
   return (
-    <div class="col-md-2">
+    <div className="col-md-2">
       <img alt={name} src={imageUrl} />
       <h5>{name}</h5>
     </div>
