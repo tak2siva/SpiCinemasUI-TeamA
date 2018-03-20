@@ -1,17 +1,9 @@
 import fetchMovies from '../movies/actions';
 
-function doUpdateAction(filterAction) {
+const changeListingFilterAndFetchData = function (filterAction) {
     return (dispatch, getState) => {
         dispatch({type: filterAction});
         fetchMovies(getState().filter.listingType)(dispatch);
-    }
-};
-
-const changeListingFilterAndFetchData = (dispatch) => {
-    return {
-        changeListingType: (filterAction) => {
-            dispatch(doUpdateAction(filterAction));
-        }
     }
 };
 
