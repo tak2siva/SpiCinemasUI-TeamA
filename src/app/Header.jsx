@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {NOW_SHOWING, UPCOMING_RELEASE} from '../filter/reducer';
-import mapDispatchToProps, { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
+import changeListingFilterAndFetchData, { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
 
 const Header = (props) => {
   return (
@@ -24,5 +24,5 @@ Header.defaultProps = {};
 
 export default connect((state)=>({
   listingType: state.filter.listingType
-}), mapDispatchToProps )(Header);
+}), changeListingFilterAndFetchData )(Header);
  

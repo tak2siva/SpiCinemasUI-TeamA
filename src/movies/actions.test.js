@@ -29,7 +29,7 @@ describe('app/movies/actions.js', ()=>{
           });
         });
     let expectedActions = []
-    store.dispatch(fetchMovies('now-showing')).then(()=>{
+    store.dispatch(fetchMovies(NOW_SHOWING)).then(()=>{
         expectedActions = [...expectedActions,{type:FETCH_MOVIES_PROGRESS}];
         expect(store.getActions()[0]).toEqual(expectedActions[0]);
         expectedActions = [...expectedActions,{type:FETCH_MOVIES_SUCCESS,
@@ -54,4 +54,3 @@ describe('app/movies/actions.js', ()=>{
         });
   });
   });
-  //});
