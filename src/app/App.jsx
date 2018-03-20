@@ -4,8 +4,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import createHistory from 'history/createBrowserHistory'
-import Header from './Header'
-import Home from './Home'
+import Header from './Header';
+import Home from './Home';
+import ModalWindow from '../location/ModalWindow';
 
 const browserHistory = createHistory()
 
@@ -19,6 +20,7 @@ const Routes = () => (
 
 const Main = () => (
   <div>
+    <ModalWindow/>
     <Header />
     <Routes />
   </div>  
