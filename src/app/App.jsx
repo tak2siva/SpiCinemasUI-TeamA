@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import createHistory from 'history/createBrowserHistory'
-import Header from '../header/Header'
+import Header from './Header'
 import Home from './Home'
 
 const browserHistory = createHistory()

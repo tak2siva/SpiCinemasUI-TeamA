@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import fetchMovies, { NOW_SHOWING, UPCOMING_RELEASE } from '../movies/actions';
+import {NOW_SHOWING, UPCOMING_RELEASE} from '../filter/reducer';
+import mapDispatchToProps, { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
 
 const Header = (props) => {
   return (
@@ -11,28 +12,17 @@ const Header = (props) => {
       <div className="App-header-text"><h1>Just Cinemas</h1></div>
       <div className="btn-group movie-group">
         <button type="button" className={props.listingType === NOW_SHOWING ? 'btn active' : 'btn'} 
-          onClick={()=>props.changeListingType(NOW_SHOWING)}>NOW RUNNING</button>
+          onClick={()=>props.changeListingType(UPDATE_TO_NOW_SHOWING)}>NOW RUNNING</button>
         <button type="button" className={props.listingType === UPCOMING_RELEASE ? 'btn active' : 'btn'} 
-          onClick={()=>props.changeListingType(UPCOMING_RELEASE)}>COMING SOON</button>
+          onClick={()=>props.changeListingType(UPDATE_TO_UPCOMING_RELEASE)}>COMING SOON</button>
       </div>
     </div >
   )
 };
 
-const tabsDispatch = function mapDispatchToProps(dispatch) {
-  return {
-    changeListingType: (listingType) => {
-      dispatch({
-        type: listingType
-      })
-      fetchMovies(listingType)(dispatch)
-    }
-  }
-}
-
 Header.defaultProps = {};
 
 export default connect((state)=>({
-  listingType: state.header.listingType
-}), tabsDispatch )(Header);
+  listingType: state.filter.listingType
+}), mapDispatchToProps )(Header);
  

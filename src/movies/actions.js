@@ -5,8 +5,6 @@ import slug from 'slug';
 export const FETCH_MOVIES_PROGRESS = 'FETCH_MOVIES_PROGRESS';
 export const FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS';
 export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
-export const NOW_SHOWING = 'NOW_SHOWING';
-export const UPCOMING_RELEASE = 'UPCOMING_RELEASE';
 
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
@@ -22,11 +20,10 @@ const movieDataFetchFailure = {
 };
 
 const fetchMovies = (listingType) => {
-  let apiParameter = listingType === NOW_SHOWING ? 'now-showing' : 'upcoming-release';
   return async (dispatch) => {
     dispatch(fetchMoviesInProgress);
     try {
-      const movies = await axios.get('http://localhost:9090/movies/'+apiParameter)
+      const movies = await axios.get('http://localhost:9090/movies/'+listingType)
       // const movies = [{
       //   id: 'asfasdfas',
       //   name: 'Kabali',

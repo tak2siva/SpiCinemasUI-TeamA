@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import fetchMovies, { NOW_SHOWING, FETCH_MOVIES_PROGRESS, FETCH_MOVIES_SUCCESS } from '../movies/actions';
-import header from '../header/headerReducer';
 import MockAdapter from 'axios-mock-adapter';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import Axios from 'axios';
+import { UPDATE_TO_NOW_SHOWING } from '../filter/actions';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -34,7 +34,7 @@ describe('app/movies/actions.js', ()=>{
           });
         });
     let expectedActions = []
-    store.dispatch(fetchMovies(NOW_SHOWING)).then(()=>{
+    store.dispatch(fetchMovies(store.dispatch(UPDATE_TO_NOW_SHOWING))).then(()=>{
         expectedActions = [...expectedActions,{type:FETCH_MOVIES_PROGRESS}];
         expect(store.getActions()[0]).toEqual(expectedActions[0]);
         expectedActions = [...expectedActions,{type:FETCH_MOVIES_SUCCESS,

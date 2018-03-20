@@ -57,7 +57,7 @@ MovieGrid.propTypes = {
 export default connect(
   (state) => ({
     movies: state.movies,
-    listingType: state.header.listingType
+    listingType: state.filter.listingType
   }), 
   (dispatch) => ({
     fetchMovies: (listingType) => dispatch(fetchMovies(listingType))
