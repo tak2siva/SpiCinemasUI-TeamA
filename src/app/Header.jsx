@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {NOW_SHOWING, UPCOMING_RELEASE} from '../filter/reducer';
 import changeListingFilterAndFetchData, { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
+import LanguageSelect from './LanguageSelect';
 
 const Header = (props) => {
   return (
@@ -9,7 +10,9 @@ const Header = (props) => {
       <div className="App-logo">
         <img src="spicinemas.png" alt="Unable to load..."></img>
       </div>
-      <div className="App-header-text"><h1>Just Cinemas</h1></div>
+      <div className="App-header-text">
+        <h1>Just Cinemas</h1>
+      </div>
       <div className="btn-group movie-group">
         <button type="button" className={props.listingType === NOW_SHOWING ? 'btn active' : 'btn'} 
           onClick={()=>props.changeListingType(UPDATE_TO_NOW_SHOWING)}>NOW RUNNING</button>
