@@ -27,7 +27,7 @@ const updateLanguages = () => {
 export default connect(
   (state) => {
     return {
-      languages: state.filter.languages
+      languages: state.listingFilter.languages
     }
   }, (dispatch) => {
     return (action) => updateLanguages(action);
