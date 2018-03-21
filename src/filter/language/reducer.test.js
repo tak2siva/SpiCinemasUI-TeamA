@@ -19,8 +19,4 @@ describe('filter/language/reducer', () => {
   it('should update language array on unticking english checkbox', () => {
     expect(languageReducer(stateOnAddFrenchLanguage,{type:REMOVE_LANGUAGE,language:'en'})).toEqual(stateOnRemoveEnglishLanguage);
   });
-
- /* it('should validate default state of now showing as initial state', () => {
-    expect(header(initialStateNowShowing,{type:UPDATE_TO_NOW_SHOWING})).toEqual(initialStateNowShowing);
-  });*/
 });
