@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import Axios from 'axios';
 import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
-
+import {axiosInstance} from '../app/App.test'
 
 let mock;
 var store;
@@ -34,7 +34,7 @@ describe('app/movies/actions.js', ()=>{
         expect(store.getActions()[0]).toEqual(expectedActions[0]);
         expectedActions = [...expectedActions,{type:FETCH_MOVIES_SUCCESS,
                                               payload:apiData }];
-        //expect(store.getActions()[1]).toEqual(expectedActions[1]);
+        expect(store.getActions()[1]).toEqual(expectedActions[1]);
         });
   });
   it('should return FETCH_MOVIES_FAILURE if http 500', async () => {
