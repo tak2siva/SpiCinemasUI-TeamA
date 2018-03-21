@@ -3,7 +3,6 @@ import fetchMovies, { NOW_SHOWING, FETCH_MOVIES_PROGRESS, FETCH_MOVIES_SUCCESS, 
 import MockAdapter from 'axios-mock-adapter';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import Axios from 'axios';
 import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
 import {axiosInstance} from '../app/App.test'
 
@@ -14,7 +13,7 @@ beforeEach(function() {
     const middlewares = [thunk]
     const mockStore = configureMockStore(middlewares)
     store = mockStore({})
-    mock = new MockAdapter(Axios.create())
+    mock = new MockAdapter(axiosInstance)
     apiData = [{"id":1,"name":"Kabali","experiences":"RDX, Dolby Atmos, SUB","listingType":"NOW_SHOWING"},
     {"id":2,"name":"Sultan","experiences":"RDX, Dolby Atmos, SUB","listingType":"NOW_SHOWING"}]
 });
