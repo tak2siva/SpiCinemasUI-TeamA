@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {NOW_SHOWING, UPCOMING_RELEASE} from '../filter/reducer';
-import changeListingFilterAndFetchData, { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
+import {NOW_SHOWING, UPCOMING_RELEASE} from '../filter/listingFilter/reducer';
+import changeListingFilterAndFetchData, { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/listingFilter/actions';
 import LanguageSelect from './LanguageSelect';
 
 const Header = (props) => {

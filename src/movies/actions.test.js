@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import Axios from 'axios';
-import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
+import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/listingFilter/actions';
 
 
 let mock;

@@ -1,4 +1,4 @@
-import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from '../filter/actions';
+import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from './actions';
 
 export const NOW_SHOWING = 'now-showing'
 export const UPCOMING_RELEASE = 'upcoming-release'

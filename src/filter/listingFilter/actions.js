@@ -1,4 +1,4 @@
-import fetchMovies from '../movies/actions';
+import fetchMovies from '../../movies/actions';
 
 const changeListingFilterAndFetchData = function (filterAction) {
     return (dispatch, getState) => {
