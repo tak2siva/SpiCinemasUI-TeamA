@@ -26,7 +26,7 @@ const Header = (props) => {
 Header.defaultProps = {};
 
 export default connect((state)=>({
-  listingType: state.filter.listingType
+  listingType: state.listingFilter.listingType
 }), (dispatch) => ({
   changeListingType: (filterAction) => dispatch(changeListingFilterAndFetchData(filterAction))
 }) )(Header);

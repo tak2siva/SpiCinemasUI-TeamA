@@ -12,7 +12,7 @@ beforeEach(function() {
 	const middlewares = [thunk]
 	const mockStore = configureMockStore(middlewares);
 	store = mockStore({
-		filter: {
+		listingFilter: {
 			listingType: ''
 		}
 	});

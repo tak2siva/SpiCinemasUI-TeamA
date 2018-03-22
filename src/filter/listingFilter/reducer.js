@@ -8,15 +8,15 @@ const languages = [
   { value: 'two', label: 'Two' },
 ];
 
-const filter = (state={listingType: NOW_SHOWING, languages: languages}, action) => {
-    switch(action.type) {
-      case UPDATE_TO_NOW_SHOWING:
-        return {...state, listingType: NOW_SHOWING}
-      case UPDATE_TO_UPCOMING_RELEASE:
-        return {...state, listingType: UPCOMING_RELEASE}
-      default:
-        return state;
-    }
-  };
+const listingFilter = (state={listingType: NOW_SHOWING, languages: languages}, action) => {
+  switch(action.type) {
+    case UPDATE_TO_NOW_SHOWING:
+      return {...state, listingType: NOW_SHOWING}
+    case UPDATE_TO_UPCOMING_RELEASE:
+      return {...state, listingType: UPCOMING_RELEASE}
+    default:
+      return state;
+  }
+};
 
-  export default filter;
+export default listingFilter;
