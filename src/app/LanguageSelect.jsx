@@ -13,7 +13,8 @@ class LanguageSelect extends React.Component {
   }
   render() {
     return (
-      <Select
+      <div style={{float:"right", width:"10%" }}>
+        <Select
         name="form-field-name"
         multi={true}
         placeholder="Select Language(s)"
@@ -22,6 +23,8 @@ class LanguageSelect extends React.Component {
         onChange={this.handleChange}
         options={this.props.languages}
       />
+      </div>
+      
     )
   }
 };

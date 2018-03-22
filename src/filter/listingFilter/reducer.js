@@ -1,7 +1,7 @@
 import { UPDATE_TO_NOW_SHOWING, UPDATE_TO_UPCOMING_RELEASE } from './actions';
 
-export const NOW_SHOWING = 'now-showing'
-export const UPCOMING_RELEASE = 'upcoming-release'
+export const NOW_SHOWING = 'NOW_SHOWING'
+export const UPCOMING_RELEASE = 'UPCOMING_RELEASE'
 
 const listingFilter = (state={listingType: NOW_SHOWING, languages: []}, action) => {
   switch(action.type) {
