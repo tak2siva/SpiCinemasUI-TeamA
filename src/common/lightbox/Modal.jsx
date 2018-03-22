@@ -14,10 +14,6 @@ class Modal extends React.Component{
     this.props.fetchLocations();
   }
 
-  componentDidUpdate(){
-    console.log(this.props, " ..updated")
-  }
-
   render(){
     return (
       <div className="box">
