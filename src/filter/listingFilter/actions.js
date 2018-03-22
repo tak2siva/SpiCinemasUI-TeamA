@@ -3,7 +3,7 @@ import fetchMovies from '../../movies/actions';
 const changeListingFilterAndFetchData = function (filterAction) {
     return (dispatch, getState) => {
         dispatch({type: filterAction});
-        fetchMovies(getState().filter.listingType)(dispatch);
+        fetchMovies(getState().listingFilter.listingType)(dispatch);
     }
 };
 

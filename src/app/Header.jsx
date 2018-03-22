@@ -12,6 +12,7 @@ const Header = (props) => {
       </div>
       <div className="App-header-text">
         <h1>Just Cinemas</h1>
+        <LanguageSelect />
       </div>
       <div className="btn-group movie-group">
         <button type="button" className={props.listingType === NOW_SHOWING ? 'btn active' : 'btn'} 
@@ -26,7 +27,7 @@ const Header = (props) => {
 Header.defaultProps = {};
 
 export default connect((state)=>({
-  listingType: state.filter.listingType
+  listingType: state.listingFilter.listingType
 }), (dispatch) => ({
   changeListingType: (filterAction) => dispatch(changeListingFilterAndFetchData(filterAction))
 }) )(Header);

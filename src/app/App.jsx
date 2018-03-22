@@ -20,7 +20,7 @@ const Routes = () => (
 
 const Main = () => (
   <div>
-    <LightBox />
+    {/* <LightBox /> */}
     <Header />
     <Routes />
   </div>

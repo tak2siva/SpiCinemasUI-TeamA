@@ -1,6 +1,6 @@
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import Axios from 'axios';
+//import Axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import changeListingFilterAndFetchData from './actions';
 import {NOW_SHOWING, UPCOMING_RELEASE} from './reducer';
@@ -12,7 +12,7 @@ beforeEach(function() {
 	const middlewares = [thunk]
 	const mockStore = configureMockStore(middlewares);
 	store = mockStore({
-		filter: {
+		listingFilter: {
 			listingType: ''
 		}
 	});
