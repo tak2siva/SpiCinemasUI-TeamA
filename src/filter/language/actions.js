@@ -4,21 +4,15 @@ export const REMOVE_LANGUAGE = 'REMOVE_LANGUAGE';
 export const FETCH_LANGUAGE_PROGRESS = 'PROGRESS';
 export const FETCH_LANGUAGE_SUCCESS = 'SUCCESS';
 export const FETCH_LANGUAGE_FAILURE = 'FAILURE';
-<<<<<<< HEAD
 import axios from 'axios';
 
-export const addRemoveLanguages = (action, payload) => {
-=======
-
 const addRemoveLanguages = (action, payload) => {
->>>>>>> 933cb9b
     return (dispatch, getState) => {
         dispatch({type: action, language: payload});
         fetchMovies(getState().filter.listingType, getState().filter.languages);
     }
 }
 
-<<<<<<< HEAD
 const fetchLanguagesInProgress = {
     type: FETCH_LANGUAGE_PROGRESS
   }
@@ -44,7 +38,4 @@ export const fetchLanguage = () => {
         }
     }
 }
-=======
 export default addRemoveLanguages;
-
->>>>>>> 933cb9b
