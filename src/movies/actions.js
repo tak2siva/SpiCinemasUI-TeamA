@@ -24,11 +24,6 @@ const fetchMovies = (listingType) => {
     dispatch(fetchMoviesInProgress);
     try {
       const movies = await axios.get('http://localhost:9090/movies/'+listingType)
-      // const movies = [{
-      //   id: 'asfasdfas',
-      //   name: 'Kabali',
-      //   experience: 'asfasdfag',
-      // }]
       const moviesData = movies.data.map(movie => {
         const sluggedData = slug(changeCase.sentenceCase(movie.name), { lower: true });
         return {...movie, slug: sluggedData}
