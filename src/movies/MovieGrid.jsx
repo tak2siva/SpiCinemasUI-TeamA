@@ -7,7 +7,7 @@ import fetchMovies from './actions';
 class MovieGrid extends Component {
 
   componentDidMount() {
-    console.log(this.props);
+    //console.log(this.props);
     this.props.fetchMovies(this.props.listingType)
   }
 

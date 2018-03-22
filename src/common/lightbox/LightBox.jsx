@@ -1,15 +1,15 @@
 import React from "react";
 import Modal from "./Modal";
 
-const ModalWindow = props => {
+const LightBox = (props) => {
   return (
     <div>
       <div className="location-selection-box">
-        <Modal />
+        <Modal title='LOCATION SELECTION'/>
       </div>
       <div className="mask" />
     </div>
   );
 };
 
-export default ModalWindow;
+export default LightBox;
