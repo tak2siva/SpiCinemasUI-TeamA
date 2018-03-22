@@ -1,5 +1,5 @@
 import * as Const from "../../common/constant/constant";
-import { locationReducer } from "./reducer";
+import locationReducer  from "../location/reducer";
 
 const initialState = { value: [] };
 
@@ -26,7 +26,7 @@ describe("test location-reducer", () => {
       })
     ).toEqual(expected);
 
-    expect(expected.locations.length).toBeGreaterThan(0);
+    expect(expected.value.length).toBeGreaterThan(0);
   });
 
   it("should set fetching to false and error message for action type FETCH_LOCATION_FAIL", () => {
