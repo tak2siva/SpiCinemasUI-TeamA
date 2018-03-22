@@ -33,4 +33,17 @@ describe("test fetch action", () => {
 			expect(expectedActions).toContainEqual({"type": FETCH_LANGUAGE_SUCCESS, payload: mockResponse});
 		});
     });
+
+    it("when server responds with failure", async () => {
+        
+        mock.onGet('http://localhost:9090/language').reply(404);
+        const expectedResponse = []
+
+        store.dispatch(fetchLanguage()).then(() => {	
+			const expectedActions = store.getActions();
+			expect(expectedActions.length).toBe(2);
+			expect(expectedActions).toContainEqual({"type": FETCH_LANGUAGE_PROGRESS});
+			expect(expectedActions).toContainEqual({"type": FETCH_LANGUAGE_FAILURE});
+		});
+    });
 });

@@ -2,9 +2,9 @@ import fetchMovies from '../../movies/actions';
 import axios from 'axios';
 export const ADD_LANGUAGE = 'ADD_LANGUAGE';
 export const REMOVE_LANGUAGE = 'REMOVE_LANGUAGE';
-export const FETCH_LANGUAGE_PROGRESS = 'PROGRESS';
-export const FETCH_LANGUAGE_SUCCESS = 'SUCCESS';
-export const FETCH_LANGUAGE_FAILURE = 'FAILURE';
+export const FETCH_LANGUAGE_PROGRESS = 'FETCH_LANGUAGE_PROGRESS';
+export const FETCH_LANGUAGE_SUCCESS = 'FETCH_LANGUAGE_SUCCESS';
+export const FETCH_LANGUAGE_FAILURE = 'FETCH_LANGUAGE_FAILURE';
 
 export const addRemoveLanguages = (action, payload) => {
     return (dispatch, getState) => {
