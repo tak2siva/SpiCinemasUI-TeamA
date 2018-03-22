@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import Title from './Title';
 import ModalBody from './ModalBody';
-import fetchLocations from '../../filter/location/action';
+import * as locationAction from '../../filter/location/action';
 
 class Modal extends React.Component{
 
@@ -18,7 +18,8 @@ class Modal extends React.Component{
     return (
       <div className="box">
       <Title title={this.props.title} />
-      <ModalBody locations={this.props.locations} />
+      <ModalBody locations={this.props.locations} 
+                  onSelectLocation={this.props.setLocation} />
     </div>
     );
   }
@@ -29,5 +30,6 @@ export default connect(
     locations: state.location.value
   }), 
   (dispatch) => ({
-    fetchLocations: () => dispatch(fetchLocations())
+    fetchLocations: () => dispatch(locationAction.fetchLocation()),
+    setLocation: (locationCode) => dispatch(locationAction.setLocation(locationCode))
   }))(Modal);

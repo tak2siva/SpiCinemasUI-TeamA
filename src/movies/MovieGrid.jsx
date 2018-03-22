@@ -6,13 +6,8 @@ import fetchMovies from './actions';
 
 class MovieGrid extends Component {
 
-  componentDidMount() {
-    //console.log(this.props);
-    this.props.fetchMovies(this.props.listingType)
-  }
-
   render() {
-    if(this.props.movies.fetching) {
+    if (this.props.movies.fetching) {
       return this.showProgress()
     }
 
@@ -58,7 +53,7 @@ export default connect(
   (state) => ({
     movies: state.movies,
     listingType: state.filter.listingType
-  }), 
+  }),
   (dispatch) => ({
-    fetchMovies: (listingType) => dispatch(fetchMovies(listingType))
+    fetchMovies: (listingType, locationCode) => dispatch(fetchMovies(listingType, locationCode))
   }))(MovieGrid);

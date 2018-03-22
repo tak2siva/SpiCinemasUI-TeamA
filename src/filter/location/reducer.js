@@ -13,8 +13,13 @@ const locationReducer = function(state = {value: []}, action) {
         value: [],
         locationFetchErrorMessage: action.payload.errorMessage
       };
-      default:
-        return state;
+    case Const.SET_LOCATION: {
+      return {
+        ...state,selectedLocation:action.payload.locationCode
+      };
+    }
+    default:
+      return state;
   }
 };
 
